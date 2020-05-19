@@ -59,7 +59,7 @@ function build_lame()
         --disable-debug \
         --disable-dependency-tracking
 
-    ${MAKE}
+    ${MAKE} -j12
 
     cp "libmp3lame/.libs/libmp3lame.a" "${OUTPUT_FOLDER}/libmp3lame-${PLATFORM}.a"
 }
@@ -69,8 +69,8 @@ HOST="i686"
 SDK="iPhoneSimulator"
 BITCODE="-fembed-bitcode-marker"
 
-PLATFORM="i386"
-build_lame
+#PLATFORM="i386"
+#build_lame
 
 PLATFORM="x86_64"
 build_lame
@@ -80,11 +80,11 @@ HOST="arm"
 SDK="iPhoneOS"
 BITCODE="-fembed-bitcode"
 
-PLATFORM="armv7"
-build_lame
+#PLATFORM="armv7"
+#build_lame
 
-PLATFORM="armv7s"
-build_lame
+#PLATFORM="armv7s"
+#build_lame
 
 PLATFORM="arm64"
 build_lame
